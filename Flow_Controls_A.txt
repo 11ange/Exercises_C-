@@ -1,0 +1,197 @@
+﻿using System;
+public class Estudo
+{
+    public static void Main(string[] args)
+    {
+        int total = 5;
+        int[] valores = new int[total];
+
+        Console.WriteLine();
+        Console.WriteLine("Estatística de 5 números");
+        for (int i = 0; i < total; i++)
+        {
+            Console.Write("{0}o. Numero: ", i + 1);
+            valores[i] = int.Parse(Console.ReadLine());
+        }
+
+        int soma = 0,
+            media = 0,
+            max = int.MinValue,
+            min = int.MaxValue;
+
+        for (int i = 0; i < total; i++)
+        {
+            int num = valores[i];
+            soma += num;
+            if (num > max)
+                max = num;
+
+            if (num < min)
+                min = num;
+        }
+
+        media = soma / total;
+
+        Console.WriteLine();
+        Console.WriteLine("Soma:  {0}", soma);
+        Console.WriteLine("Média: {0}", media);
+        Console.WriteLine("Max:   {0}", max);
+        Console.WriteLine("Min:   {0}", min);
+        Console.WriteLine();
+    }
+}
+/*{
+    public static void Main(string[] args)
+    {
+        int soma = 0;
+        Console.WriteLine();
+        Console.WriteLine("Soma de números");
+        Console.Write("Numero: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+        while (a != 0)
+        {
+            soma = soma + a;
+            Console.WriteLine("Soma:   {0}", soma);
+            Console.WriteLine();
+            Console.Write("Numero: ");
+            a = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine();
+        Console.Write("Fim do programa... ");
+        Console.WriteLine();
+    }
+}*/
+/*{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Range de numeros");
+        Console.Write("Numero inicial: ");
+        int inicial = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Numero final: ");
+        int final = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+        for (int i = inicial; i <= final; i++)
+        {
+            Console.Write("{0} ", i);
+        }
+    }
+}*/
+/*{
+    public static void Main(string[] args)
+    {
+        int a =1;
+        Console.WriteLine();
+        Console.WriteLine("Só para se digitar o número zero");
+        //Console.Write("Numero: ");
+        //int a = Convert.ToInt32(Console.ReadLine());
+        do
+        {
+            Console.Write("Numero: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Numero*10 = {0}", a * 10);
+        } while (a != 0);
+    }
+}*/
+/*{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Só para se digitar o número zero");
+        Console.Write("Numero: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+        while (a != 0)
+        {
+            Console.WriteLine("Numero*10 = {0}", a * 10);
+            Console.Write("Numero: ");
+            a = Convert.ToInt32(Console.ReadLine());
+        }
+    }
+}*/
+/*{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Acha maior número");
+        Console.Write("1o. Numero: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+        Console.Write("2o. Numero: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+        Console.Write("3o. Numero: ");
+        int c = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+        //Console.Write("O maior número digitado é o ");
+        if ((a > b) && (a > c))
+            Console.WriteLine("O maior número digitado é o {0}",a);
+        else if ((b > a) && (b > c))
+            Console.WriteLine("O maior número digitado é o {0}",b);
+        else if ((c > a) && (c > b))
+            Console.WriteLine("O maior número digitado é o {0}",c);
+        else
+            Console.WriteLine("Todos os números são iguais");
+    }
+}*/
+/*{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        int a = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+        if (a > 0)
+            Console.WriteLine("Positivo");
+        else if (a < 0)
+            Console.WriteLine("Negativo");
+        else
+            Console.WriteLine("Neutro");
+    }
+}*/
+/*{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        int a = Convert.ToInt32(Console.ReadLine());
+        char operador = Convert.ToChar(Console.ReadLine());
+        int b = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+
+        switch (operador)
+        {
+            case '+':
+                Console.WriteLine("{0} + {1} = {2}", a, b, a + b);
+                break;
+            case '-':
+                Console.WriteLine("{0} - {1} = {2}", a, b, a - b);
+                break;
+            case 'x':
+            case '*':
+                Console.WriteLine("{0} x {1} = {2}", a, b, a * b);
+                break;
+            case '/':
+                Console.WriteLine("{0} / {1} = {2}", a, b, a / b);
+                break;
+            default:
+                Console.WriteLine("Unrecognized character");
+                break;
+        }
+    }
+}*/
+/*{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        int a = Convert.ToInt32(Console.ReadLine());
+        char operador = Convert.ToChar(Console.ReadLine());
+        int b = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+        if (operador == '+')
+            Console.WriteLine("{0} + {1} = {2}", a, b, a + b);
+        else if (operador == '-')
+            Console.WriteLine("{0} - {1} = {2}", a, b, a - b);
+        else if ((operador == 'x') || (operador == '*'))
+            Console.WriteLine("{0} x {1} = {2}", a, b, a * b);
+        else if (operador == '/')
+            Console.WriteLine("{0} / {1} = {2}", a, b, a / b);
+        else
+            Console.WriteLine("Unrecognized character");
+    }
+}*/

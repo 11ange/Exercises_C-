@@ -1,0 +1,418 @@
+﻿using System;
+public class Estudo
+{
+/*Digits in a number
+Last updated: 8/22/2020 Exercise difficulty: Easy
+Create a program in C# to calculate how many digits has a positive integer.
+
+If the user enters a negative integer, the program must show a warning message, and proceed with the equivalent positive number.
+
+Input
+112
+-5345
+Output
+2 digits
+(Warning: it is a negative number)
+4 digits
+Solution*/
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Quantos dígitos");
+        Console.Write("Entre com o número:");
+        int num = int.Parse(Console.ReadLine());
+        Console.WriteLine();
+
+        int digitos = 0;
+ 
+        if (num < 0)
+        {
+            Console.Write("(O número é negativo) ");
+            num = -num;
+        }
+ 
+        while (num > 0)
+        {
+            num /= 10;
+            digitos++;
+        }
+ 
+        if (digitos == 0)
+        { 
+            digitos = 1;
+        }
+
+        Console.WriteLine("{0} digitos", digitos);
+
+        Console.WriteLine();
+        Console.WriteLine("Goodbye...");
+        Console.WriteLine();
+    }
+}
+/*{
+    /*Repetitive structures
+Last updated: 8/22/2020 Exercise difficulty: Intermediate
+Create a C# program that asks the user for two integers (x, y) and shows the range of those numbers (the two included), in three different ways:
+
+Using the for statement.
+Using the while statement.
+Using the do while instruction.
+Input
+6
+12
+Output
+6 7 8 9 10 11 12
+6 7 8 9 10 11 12
+6 7 8 9 10 11 12
+Solution*//*
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Laços de repetição");
+        Console.Write("Entre com o inicio:");
+        int inicio = int.Parse(Console.ReadLine());
+        Console.Write("Entre com o final:");
+        int final = int.Parse(Console.ReadLine());
+        Console.WriteLine();
+        int i;
+
+        for (i = inicio; i <= final;i++)
+        {
+            Console.Write("{0} ", i);
+        }
+        Console.WriteLine();
+
+        i = inicio;
+        while (i <= final)
+        {
+            Console.Write("{0} ", i);
+            i++;
+        }
+        Console.WriteLine();
+
+        i = inicio;
+        do
+        {
+            Console.Write("{0} ", i);
+            i++;
+        } while (i <= final);
+        Console.WriteLine();
+
+        Console.WriteLine();
+        Console.WriteLine("Goodbye...");
+        Console.WriteLine();
+    }
+}*/
+/*{
+    /*Switch, break and default
+Last updated: 8/22/2020 Exercise difficulty: Easy
+Create a C# program that calculates a student's grade from an integer. Ask the user for a number (x) and answer the following:
+
+10 - A+
+9 - A
+7,8 - B
+6 - C
+5 - E
+0,4 - F
+Use the switch, break and default instruction of C#.
+
+Input
+10
+Output
+A+
+Solution*//*
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Conversão de nota decimal pra letras");
+        Console.Write("Entre com a nota:");
+        int nota = int.Parse(Console.ReadLine());
+        Console.WriteLine();
+
+        switch (nota)
+        {
+            case 10:
+                Console.WriteLine("Sua nota é A+");
+                break;
+            case 9:
+                Console.WriteLine("Sua nota é A");
+                break;
+            case 8:
+            case 7:
+                Console.WriteLine("Sua nota é B");
+                break;
+            case 6:
+                Console.WriteLine("Sua nota é C");
+                break;
+            case 5:
+                Console.WriteLine("Sua nota é E");
+                break;
+            case 4:
+            case 3:
+            case 2:
+            case 1:
+            case 0:
+                Console.WriteLine("Sua nota é F");
+                break;
+            default:
+                Console.WriteLine("Você digitou uma nota inválida");
+                break;
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Goodbye...");
+        Console.WriteLine();
+    }
+}*/
+/*{
+    /*Infinite divisions
+Last updated: 8/22/2020 Exercise difficulty: Intermediate
+Write a program in C# that asks the user for two numbers and shows the division and the rest of the division. Notify if 0 is entered as the second number and end if 0 is entered as the first number.
+
+Input
+6
+0
+20
+10
+5
+5
+0
+Output
+You cannot divide by 0
+The division is 2
+The rest is 0
+The division is 1
+The rest is 0
+Goodbye!
+Solution*//*
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Tabuada");
+        Console.Write("Entre com o inicio:");
+        int inicio = int.Parse(Console.ReadLine());
+        Console.Write("Entre com o final:");
+        int final = int.Parse(Console.ReadLine());
+        Console.WriteLine();
+
+        for (int a = inicio; a <= final; a++)
+        {
+            for (int b = 1; b <= 10; b++)
+            {
+                Console.WriteLine("{0} x {1} = {2}", a, b, a * b);
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine("Goodbye...");
+        Console.WriteLine();
+    }
+}*/
+/*{
+    /*Infinite divisions
+Last updated: 8/22/2020 Exercise difficulty: Intermediate
+Write a program in C# that asks the user for two numbers and shows the division and the rest of the division. Notify if 0 is entered as the second number and end if 0 is entered as the first number.
+
+Input
+6
+0
+20
+10
+5
+5
+0
+Output
+You cannot divide by 0
+The division is 2
+The rest is 0
+The division is 1
+The rest is 0
+Goodbye!
+Solution*//*
+    public static void Main(string[] args)
+    {
+        int contador = 1;
+        int[] valores = { };
+
+        Console.WriteLine();
+        Console.WriteLine("Tabuada");
+        Console.WriteLine("0 encerra a entrada de dados");
+        Console.WriteLine();
+
+        do
+        {
+            Array.Resize(ref valores, contador);
+            Console.Write("Entre com um número:");
+            valores[contador - 1] = int.Parse(Console.ReadLine());
+            contador++;
+        } while (valores[contador - 2] != 0);
+
+        Console.WriteLine();
+        for (int a = 0; a < contador - 2; a++)
+        {
+            for (int b = 1; b <= 10; b++)
+            {
+                Console.WriteLine("{0} x {1} = {2}", valores[a], b, valores[a] * b);
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine("Goodbye...");
+        Console.WriteLine();
+    }
+}*/
+/*{
+    /*Infinite divisions
+Last updated: 8/22/2020 Exercise difficulty: Intermediate
+Write a program in C# that asks the user for two numbers and shows the division and the rest of the division. Notify if 0 is entered as the second number and end if 0 is entered as the first number.
+
+Input
+6
+0
+20
+10
+5
+5
+0
+Output
+You cannot divide by 0
+The division is 2
+The rest is 0
+The division is 1
+The rest is 0
+Goodbye!
+Solution*/
+/*
+
+    public static void Main(string[] args)
+    {
+        int num1 = 1,
+            num2 = 1;
+        Console.WriteLine();
+        Console.WriteLine("Divisão de inteiros");
+        Console.WriteLine();
+        do
+        {
+            Console.Write("Dividendo:");
+            num1 = int.Parse(Console.ReadLine());
+            if (num1 != 0)
+            {
+                Console.Write("Divisor:");
+                num2 = int.Parse(Console.ReadLine());
+                //Console.WriteLine();
+                if (num2 == 0)
+                {
+                    Console.WriteLine("You cannot divide by 0");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine("The division is {0}", num1 / num2);
+                    Console.WriteLine("The rest is {0}", num1 % num2);
+                    Console.WriteLine();
+                }
+            }
+        } while (num1 != 0);
+        Console.WriteLine();
+        Console.WriteLine("Goodbye...");
+        Console.WriteLine();
+    }
+}*/
+/*{
+    /*Access control
+    Last updated: 8/22/2020 Exercise difficulty: Intermediate
+    Write an access control in C# that asks the user for the username and password. Both must be integers and repeat until the login is 12 and the password is 1234 or up to a maximum of 3 attempts.
+
+    If the username and password are correct it shows Login successful, but Login failed.
+
+    Input
+    1234
+    1234
+    admin
+    admin
+    admin
+    1234
+    Output
+    Login failed
+    Login failed
+    Login failed
+    Solution*//*
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Controle de acesso");
+        Console.WriteLine("Máximo de 3 tentativas");
+        Console.WriteLine("user=12 / pass=1234");
+        Console.WriteLine();
+        for (int i = 1; i <= 3; i++)
+        {
+            Console.Write("Usuário: ");
+            int user = int.TryParse(Console.ReadLine(), out user) ? user : 1;
+            Console.Write("Senha: ");
+            int pass = int.TryParse(Console.ReadLine(), out pass) ? pass : 1;
+            Console.WriteLine();
+            if ((user == 12) && (pass == 1234))
+            {
+                Console.WriteLine("Acesso permitido");
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Usuário/Senha inválidos.");
+            }
+        }
+        Console.WriteLine();
+        Console.WriteLine();
+    }
+}*/
+/*{
+    /*Multiples numbers
+Last updated: 8/22/2020 Exercise difficulty: Intermediate
+Create a C# program that shows numbers 1 through 500 that are multiples of 3 and also multiples of 5.
+
+Input
+ 
+Output
+15 30 45 60 75 90 105 120 135 150 165 180 195 210 225 240 255 270 285 300 315 330 345 360 375 390 405 420 435 450 465 480 495
+Solution *//*
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Multiplos de 3 e 5 até 500");
+        Console.WriteLine();
+        for (int i = 1; i <= 500; i++)
+        {
+            if ((i % 5 == 0) && (i % 3 == 0))
+                Console.Write("{0} ", i);
+        }
+        Console.WriteLine();
+        Console.WriteLine();
+    }
+}*/
+/*{
+    /*Number repeated
+    Last updated: 8/22/2020 Exercise difficulty: Easy
+    Write a program in C# that asks for a number (x) and a amount (y). Show that number as many times as the amount (y).
+
+    Input
+    5
+    13
+    Output
+    5555555555555
+    Solution
+    *//*
+    public static void Main(string[] args)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Repetição do número");
+        Console.Write("Numero a ser repetido: ");
+        int num = int.Parse(Console.ReadLine());
+        //int num = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Quantidade de repetições: ");
+        int rep = int.Parse(Console.ReadLine());
+        Console.WriteLine();
+        for (int i = 1; i <= rep; i++)
+        {
+            Console.Write("{0}", num);
+        }
+        Console.WriteLine();
+    }
+}*/
